@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+</head>
+<body>
+<h1 th:text="${product.name}">Tên sản phẩm</h1>
+<img th:src="@{${product.imageUrl}}" th:alt="${product.name}" style="width: 300px;">
+<p><strong>Mô tả:</strong> <span th:text="${product.description}"></span></p>
+<p><strong>Giá:</strong> <span th:text="${product.price}"></span> VNĐ</p>
+<p><strong>Danh mục:</strong> <span th:text="${product.category.name}"></span></p>
+
+<a href="/products">Quay lại danh sách sản phẩm</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cart List</title>
+</head>
+<body>
+<h1>Cart List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Total Price</th>
+    </tr>
+    <tr th:each="cart : ${carts}">
+        <td th:text="${cart.id}">1</td>
+        <td th:text="${cart.name}">Sample Cart</td>
+        <td th:text="${cart.totalPrice}">0.0</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Wishlist</title>
+</head>
+<body>
+<h1>Add New Wishlist</h1>
+<form th:action="@{/wishlist/add}" th:object="${wishlist}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required />
+    <button type="submit">Save</button>
+</form>
+<a th:href="@{/wishlist}">Cancel</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cart Item Form</title>
+</head>
+<body>
+<h1>Cart Item Form</h1>
+<form th:action="@{/cart-items/save}" th:object="${cartItem}" method="post">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" />
+    <br/>
+    <label>Quantity:</label>
+    <input type="number" th:field="*{quantity}" />
+    <br/>
+    <label>Price:</label>
+    <input type="text" th:field="*{price}" />
+    <br/>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

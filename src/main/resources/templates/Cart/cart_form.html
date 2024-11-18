@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cart Form</title>
+</head>
+<body>
+<h1>Cart Form</h1>
+<form th:action="@{/carts/save}" th:object="${cart}" method="post">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" />
+
+    <label>Total Price:</label>
+    <input type="text" th:field="*{totalPrice}" />
+
+    <label>Created At:</label>
+    <input type="date" th:field="*{createdAt}" />
+
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

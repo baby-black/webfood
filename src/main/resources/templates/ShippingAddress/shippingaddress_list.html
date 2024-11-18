@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shipping Addresses</title>
+</head>
+<body>
+<h1>Shipping Addresses</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Recipient Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>City</th>
+        <th>Postal Code</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="shippingAddress : ${shippingAddresses}">
+        <td th:text="${shippingAddress.id}"></td>
+        <td th:text="${shippingAddress.recipientName}"></td>
+        <td th:text="${shippingAddress.address}"></td>
+        <td th:text="${shippingAddress.phoneNumber}"></td>
+        <td th:text="${shippingAddress.city}"></td>
+        <td th:text="${shippingAddress.postalCode}"></td>
+        <td>
+            <a th:href="@{/shipping-addresses/{id}/edit(id=${shippingAddress.id})}">Edit</a>
+            <a th:href="@{/shipping-addresses/{id}/delete(id=${shippingAddress.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/shipping-addresses/new">Add New Shipping Address</a>
+</body>
+</html>
